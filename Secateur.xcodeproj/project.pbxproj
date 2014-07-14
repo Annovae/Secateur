@@ -11,8 +11,8 @@
 		E5BD7FE01973899F00A45D30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5BD7FDE1973899F00A45D30 /* InfoPlist.strings */; };
 		E5BD7FE21973899F00A45D30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BD7FE11973899F00A45D30 /* main.m */; };
 		E5BD7FE61973899F00A45D30 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E5BD7FE41973899F00A45D30 /* Credits.rtf */; };
-		E5BD7FE91973899F00A45D30 /* DRHDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BD7FE81973899F00A45D30 /* DRHDocument.m */; };
-		E5BD7FEC1973899F00A45D30 /* DRHDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BD7FEA1973899F00A45D30 /* DRHDocument.xib */; };
+		E5BD7FE91973899F00A45D30 /* DRHSecateurDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BD7FE81973899F00A45D30 /* DRHSecateurDocument.m */; };
+		E5BD7FEC1973899F00A45D30 /* DRHSecateurDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BD7FEA1973899F00A45D30 /* DRHSecateurDocument.xib */; };
 		E5BD7FEF1973899F00A45D30 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BD7FED1973899F00A45D30 /* MainMenu.xib */; };
 		E5BD7FF11973899F00A45D30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5BD7FF01973899F00A45D30 /* Images.xcassets */; };
 		E5BD7FF81973899F00A45D30 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BD7FF71973899F00A45D30 /* XCTest.framework */; };
@@ -42,9 +42,9 @@
 		E5BD7FE11973899F00A45D30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E5BD7FE31973899F00A45D30 /* Secateur-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Secateur-Prefix.pch"; sourceTree = "<group>"; };
 		E5BD7FE51973899F00A45D30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		E5BD7FE71973899F00A45D30 /* DRHDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRHDocument.h; sourceTree = "<group>"; };
-		E5BD7FE81973899F00A45D30 /* DRHDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRHDocument.m; sourceTree = "<group>"; };
-		E5BD7FEB1973899F00A45D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DRHDocument.xib; sourceTree = "<group>"; };
+		E5BD7FE71973899F00A45D30 /* DRHSecateurDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRHSecateurDocument.h; sourceTree = "<group>"; };
+		E5BD7FE81973899F00A45D30 /* DRHSecateurDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRHSecateurDocument.m; sourceTree = "<group>"; };
+		E5BD7FEB1973899F00A45D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DRHSecateurDocument.xib; sourceTree = "<group>"; };
 		E5BD7FEE1973899F00A45D30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E5BD7FF01973899F00A45D30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E5BD7FF61973899F00A45D30 /* SecateurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecateurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,9 +117,9 @@
 		E5BD7FDB1973899F00A45D30 /* Secateur */ = {
 			isa = PBXGroup;
 			children = (
-				E5BD7FE71973899F00A45D30 /* DRHDocument.h */,
-				E5BD7FE81973899F00A45D30 /* DRHDocument.m */,
-				E5BD7FEA1973899F00A45D30 /* DRHDocument.xib */,
+				E5BD7FE71973899F00A45D30 /* DRHSecateurDocument.h */,
+				E5BD7FE81973899F00A45D30 /* DRHSecateurDocument.m */,
+				E5BD7FEA1973899F00A45D30 /* DRHSecateurDocument.xib */,
 				E5BD7FED1973899F00A45D30 /* MainMenu.xib */,
 				E5BD7FF01973899F00A45D30 /* Images.xcassets */,
 				E5BD7FDC1973899F00A45D30 /* Supporting Files */,
@@ -234,7 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5BD7FEC1973899F00A45D30 /* DRHDocument.xib in Resources */,
+				E5BD7FEC1973899F00A45D30 /* DRHSecateurDocument.xib in Resources */,
 				E5BD7FF11973899F00A45D30 /* Images.xcassets in Resources */,
 				E5BD7FE01973899F00A45D30 /* InfoPlist.strings in Resources */,
 				E5BD7FE61973899F00A45D30 /* Credits.rtf in Resources */,
@@ -258,7 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5BD7FE21973899F00A45D30 /* main.m in Sources */,
-				E5BD7FE91973899F00A45D30 /* DRHDocument.m in Sources */,
+				E5BD7FE91973899F00A45D30 /* DRHSecateurDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,12 +297,12 @@
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		E5BD7FEA1973899F00A45D30 /* DRHDocument.xib */ = {
+		E5BD7FEA1973899F00A45D30 /* DRHSecateurDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E5BD7FEB1973899F00A45D30 /* Base */,
 			);
-			name = DRHDocument.xib;
+			name = DRHSecateurDocument.xib;
 			sourceTree = "<group>";
 		};
 		E5BD7FED1973899F00A45D30 /* MainMenu.xib */ = {
@@ -479,6 +479,7 @@
 				E5BD80081973899F00A45D30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E5BD80091973899F00A45D30 /* Build configuration list for PBXNativeTarget "SecateurTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +488,7 @@
 				E5BD800B1973899F00A45D30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
