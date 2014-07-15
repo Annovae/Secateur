@@ -19,6 +19,7 @@
 		E5BD7FF91973899F00A45D30 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BD7FD51973899F00A45D30 /* Cocoa.framework */; };
 		E5BD80011973899F00A45D30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5BD7FFF1973899F00A45D30 /* InfoPlist.strings */; };
 		E5BD80031973899F00A45D30 /* SecateurTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BD80021973899F00A45D30 /* SecateurTests.m */; };
+		E5C7B6A91974CF52009EB09B /* DRHSecateurTree.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C7B6A81974CF52009EB09B /* DRHSecateurTree.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		E5BD7FFE1973899F00A45D30 /* SecateurTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SecateurTests-Info.plist"; sourceTree = "<group>"; };
 		E5BD80001973899F00A45D30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E5BD80021973899F00A45D30 /* SecateurTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecateurTests.m; sourceTree = "<group>"; };
+		E5C7B6A71974CF52009EB09B /* DRHSecateurTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRHSecateurTree.h; sourceTree = "<group>"; };
+		E5C7B6A81974CF52009EB09B /* DRHSecateurTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRHSecateurTree.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 		E5BD7FDB1973899F00A45D30 /* Secateur */ = {
 			isa = PBXGroup;
 			children = (
+				E5C7B6A71974CF52009EB09B /* DRHSecateurTree.h */,
+				E5C7B6A81974CF52009EB09B /* DRHSecateurTree.m */,
 				E5BD7FE71973899F00A45D30 /* DRHSecateurDocument.h */,
 				E5BD7FE81973899F00A45D30 /* DRHSecateurDocument.m */,
 				E5BD7FEA1973899F00A45D30 /* DRHSecateurDocument.xib */,
@@ -257,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5C7B6A91974CF52009EB09B /* DRHSecateurTree.m in Sources */,
 				E5BD7FE21973899F00A45D30 /* main.m in Sources */,
 				E5BD7FE91973899F00A45D30 /* DRHSecateurDocument.m in Sources */,
 			);

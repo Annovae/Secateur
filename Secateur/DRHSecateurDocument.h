@@ -7,7 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+//#import "DRHSecateurData.h"
 
-@interface DRHDocument : NSDocument
+@interface DRHSecateurDocument : NSDocument <NSTableViewDataSource> {
+//    DRHSecateurData *database;
+    NSMutableArray *dataArray;
+    
+    IBOutlet NSTableView *treeTable;
+}
+
+-(IBAction)addTree:(id)sender;
+-(IBAction)removeSelectedTrees:(id)sender;
 
 @end
