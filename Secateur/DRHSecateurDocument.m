@@ -8,6 +8,8 @@
 
 #import "DRHSecateurDocument.h"
 #import "DRHSecateurTree.h"
+#import "DRHSecateurDisplayViewController.h"
+#import "DRHSecateurEditingViewController.h"
 
 @implementation DRHSecateurDocument
 
@@ -17,6 +19,10 @@
     if (self) {
         // Add your subclass-specific initialization here.
         dataArray = [NSMutableArray array];
+        selectedTree= nil;
+        
+        displayViewController = nil;
+        editingViewController = nil;
     }
     return self;
 }
@@ -32,6 +38,7 @@
 {
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
+    [self showDisplayView];
 }
 
 + (BOOL)autosavesInPlace
@@ -87,6 +94,21 @@
     [[dataArray objectAtIndex:row] setTreeName:object];
 }
 
+#pragma mark NSTableView delegate methods
+-(void)tableViewSelectionDidChange:(NSNotification *)notification{
+    NSIndexSet *selectedTreeIndexes = [notification.object selectedRowIndexes];
+    if ([selectedTreeIndexes count] > 0) {
+        [self selectTree:[dataArray objectAtIndex:[selectedTreeIndexes firstIndex]]];
+    }
+}
+
+#pragma mark Key-value observing methods
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([object isKindOfClass:[DRHSecateurTree class]] && [keyPath isEqualToString:@"treeName"]) {
+        [treeTable reloadData];
+    }
+}
+
 
 -(IBAction)addTree:(id)sender{
     [dataArray addObject:[DRHSecateurTree tree]];
@@ -103,6 +125,49 @@
         }
     }];
 //    [dataArray removeObjectsAtIndexes:[treeTable selectedRowIndexes]];
+}
+
+-(void)selectTree:(DRHSecateurTree *)tree{
+    [selectedTree removeObserver:self forKeyPath:@"treeName"];
+    selectedTree = tree;
+    [tree addObserver:self forKeyPath:@"treeName" options:0 context:nil];
+    [editingViewController bindToTree:tree];
+}
+
+-(IBAction)edit:(id)sender{
+    [self showEditingView];
+    [sender setTitle:@"End editing"];
+    [sender setAction:@selector(endEditing:)];
+}
+
+-(void)showEditingView{
+    if (!editingViewController) {
+        editingViewController = [[DRHSecateurEditingViewController alloc] init];
+    }
+    [editingViewController.view setFrame:[contentView bounds]];
+    editingViewController.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    [displayViewController.view removeFromSuperview];
+    [contentView addSubview:editingViewController.view];
+    NSIndexSet *selectedTreeIndexes = [treeTable selectedRowIndexes];
+    if ([selectedTreeIndexes count] > 0) {
+        [self selectTree:[dataArray objectAtIndex:[selectedTreeIndexes firstIndex]]];
+    }
+}
+
+-(IBAction)endEditing:(id)sender{
+    [self showDisplayView];
+    [sender setTitle:@"Edit"];
+    [sender setAction:@selector(edit:)];
+}
+
+-(void)showDisplayView{
+    if (!displayViewController) {
+        displayViewController = [[DRHSecateurDisplayViewController alloc] init];
+    }
+    [displayViewController.view setFrame:[contentView bounds]];
+    displayViewController.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+    [editingViewController.view removeFromSuperview];
+    [contentView addSubview:displayViewController.view];
 }
 
 @end
