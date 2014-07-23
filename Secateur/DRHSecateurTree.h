@@ -10,9 +10,22 @@
 
 @interface DRHSecateurTree : NSObject <NSCoding> {
     NSString *treeName;
+    NSString *species;
+    NSString *source;
+    NSDate *startDate;
+    NSDate *potUpDate;
+    NSMutableArray *pottingHistoryArray;
+    NSMutableArray *galleryArray;
 }
 @property NSString *treeName;
+@property NSString *species;
+@property NSString *source;
+@property NSDate *startDate;
+@property NSDate *potUpDate;
 
 +(DRHSecateurTree *)tree;
+
+-(NSMutableArray *)pottingHistoryArray;
+-(NSMutableArray *)galleryArray;
 
 @end

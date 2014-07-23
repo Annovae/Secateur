@@ -12,8 +12,16 @@
 
 @interface DRHSecateurEditingViewController : NSViewController {
     IBOutlet NSTextField *nameField;
+    IBOutlet NSTextField *speciesField;
+    IBOutlet NSTextField *sourceField;
+    IBOutlet NSDatePicker *startDatePicker;
+    IBOutlet NSDatePicker *potUpDatePicker;
 }
 -(NSTextField *)nameField;
+-(NSTextField *)speciesField;
+-(NSTextField *)sourceField;
+-(NSDatePicker *)startDatePicker;
+-(NSDatePicker *)potUpDatePicker;
 
 -(void)bindToTree:(DRHSecateurTree *)tree;
 

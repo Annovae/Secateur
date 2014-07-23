@@ -27,9 +27,34 @@
     return nameField;
 }
 
+-(NSTextField *)speciesField{
+    return speciesField;
+}
+
+-(NSTextField *)sourceField{
+    return sourceField;
+}
+
+-(NSDatePicker *)startDatePicker{
+    return startDatePicker;
+}
+
+-(NSDatePicker *)potUpDatePicker{
+    return potUpDatePicker;
+}
+
+
 -(void)bindToTree:(DRHSecateurTree *)tree{
     [nameField unbind:@"value"];
     [nameField bind:@"value" toObject:tree withKeyPath:@"treeName" options:nil];
+    [speciesField unbind:@"value"];
+    [speciesField bind:@"value" toObject:tree withKeyPath:@"species" options:nil];
+    [sourceField unbind:@"value"];
+    [sourceField bind:@"value" toObject:tree withKeyPath:@"source" options:nil];
+    [startDatePicker unbind:@"value"];
+    [startDatePicker bind:@"value" toObject:tree withKeyPath:@"startDate" options:nil];
+    [potUpDatePicker unbind:@"value"];
+    [potUpDatePicker bind:@"value" toObject:tree withKeyPath:@"potUpDate" options:nil];
 }
 
 @end

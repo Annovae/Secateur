@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E553980C197F676A00E4A10B /* toDo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E553980B197F676A00E4A10B /* toDo.rtf */; };
+		E553980F197F681800E4A10B /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = E553980D197F681800E4A10B /* LICENSE.md */; };
+		E5539810197F681800E4A10B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E553980E197F681800E4A10B /* README.md */; };
 		E5939B521977709000E4082E /* DRHSecateurEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5939B501977709000E4082E /* DRHSecateurEditingViewController.m */; };
 		E5939B531977709000E4082E /* DRHSecateurEditingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5939B511977709000E4082E /* DRHSecateurEditingView.xib */; };
 		E5939B57197775AE00E4082E /* DRHSecateurDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5939B55197775AE00E4082E /* DRHSecateurDisplayViewController.m */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E553980B197F676A00E4A10B /* toDo.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = toDo.rtf; path = Secateur/toDo.rtf; sourceTree = "<group>"; };
+		E553980D197F681800E4A10B /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
+		E553980E197F681800E4A10B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E5939B4F1977709000E4082E /* DRHSecateurEditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRHSecateurEditingViewController.h; sourceTree = "<group>"; };
 		E5939B501977709000E4082E /* DRHSecateurEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRHSecateurEditingViewController.m; sourceTree = "<group>"; };
 		E5939B511977709000E4082E /* DRHSecateurEditingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DRHSecateurEditingView.xib; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 		E5BD7FC91973899F00A45D30 = {
 			isa = PBXGroup;
 			children = (
+				E553980B197F676A00E4A10B /* toDo.rtf */,
 				E5BD7FDB1973899F00A45D30 /* Secateur */,
 				E5BD7FFC1973899F00A45D30 /* SecateurTests */,
 				E5BD7FD41973899F00A45D30 /* Frameworks */,
@@ -151,6 +158,8 @@
 		E5BD7FDC1973899F00A45D30 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E553980D197F681800E4A10B /* LICENSE.md */,
+				E553980E197F681800E4A10B /* README.md */,
 				E5BD7FDD1973899F00A45D30 /* Secateur-Info.plist */,
 				E5BD7FDE1973899F00A45D30 /* InfoPlist.strings */,
 				E5BD7FE11973899F00A45D30 /* main.m */,
@@ -255,6 +264,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E553980C197F676A00E4A10B /* toDo.rtf in Resources */,
+				E553980F197F681800E4A10B /* LICENSE.md in Resources */,
+				E5539810197F681800E4A10B /* README.md in Resources */,
 				E5BD7FEC1973899F00A45D30 /* DRHSecateurDocument.xib in Resources */,
 				E5BD7FF11973899F00A45D30 /* Images.xcassets in Resources */,
 				E5939B531977709000E4082E /* DRHSecateurEditingView.xib in Resources */,
