@@ -7,6 +7,8 @@
 //
 
 #import "DRHSecateurEditingViewController.h"
+#import "DRHSecateurDocument.h"
+#import "DRHSecateurTree.h"
 
 @interface DRHSecateurEditingViewController ()
 
@@ -44,6 +46,20 @@
 }
 
 
+#pragma mark NSTableViewDataSource methods
+-(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
+    return [[[[self.view.window.windowController document] selectedTree] pottingHistoryArray] count];
+}
+
+-(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
+    return @"-";
+}
+
+-(void)tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
+    
+}
+
+
 -(void)bindToTree:(DRHSecateurTree *)tree{
     [nameField unbind:@"value"];
     [nameField bind:@"value" toObject:tree withKeyPath:@"treeName" options:nil];
@@ -55,6 +71,18 @@
     [startDatePicker bind:@"value" toObject:tree withKeyPath:@"startDate" options:nil];
     [potUpDatePicker unbind:@"value"];
     [potUpDatePicker bind:@"value" toObject:tree withKeyPath:@"potUpDate" options:nil];
+}
+
+-(IBAction)addPottingHistory:(id)sender{
+    [[[[self.view.window.windowController document] selectedTree] pottingHistoryArray] addObject:@"-"];
+    [pottingHistoryTable reloadData];
+}
+
+-(IBAction)removePottingHistory:(id)sender{
+    NSMutableArray *historyArray = [[[self.view.window.windowController document] selectedTree] pottingHistoryArray];
+    if ([historyArray count] > 0)
+        [historyArray removeObjectsAtIndexes:[pottingHistoryTable selectedRowIndexes]];
+    [pottingHistoryTable reloadData];
 }
 
 @end

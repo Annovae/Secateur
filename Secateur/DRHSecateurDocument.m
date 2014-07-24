@@ -104,9 +104,17 @@
 
 #pragma mark Key-value observing methods
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-    if ([object isKindOfClass:[DRHSecateurTree class]] && [keyPath isEqualToString:@"treeName"]) {
-        [treeTable reloadData];
+    if ([object isKindOfClass:[DRHSecateurTree class]]){
+        [self updateChangeCount:NSChangeDone];
+        if ([keyPath isEqualToString:@"treeName"])
+            [treeTable reloadData];
     }
+}
+
+
+#pragma mark Getters
+-(DRHSecateurTree *)selectedTree{
+    return selectedTree;
 }
 
 
@@ -124,13 +132,20 @@
             [treeTable reloadData];
         }
     }];
-//    [dataArray removeObjectsAtIndexes:[treeTable selectedRowIndexes]];
 }
 
 -(void)selectTree:(DRHSecateurTree *)tree{
     [selectedTree removeObserver:self forKeyPath:@"treeName"];
+    [selectedTree removeObserver:self forKeyPath:@"species"];
+    [selectedTree removeObserver:self forKeyPath:@"source"];
+    [selectedTree removeObserver:self forKeyPath:@"startDate"];
+    [selectedTree removeObserver:self forKeyPath:@"potUpDate"];
     selectedTree = tree;
     [tree addObserver:self forKeyPath:@"treeName" options:0 context:nil];
+    [tree addObserver:self forKeyPath:@"species" options:0 context:nil];
+    [tree addObserver:self forKeyPath:@"source" options:0 context:nil];
+    [tree addObserver:self forKeyPath:@"startDate" options:0 context:nil];
+    [tree addObserver:self forKeyPath:@"potUpDate" options:0 context:nil];
     [editingViewController bindToTree:tree];
 }
 

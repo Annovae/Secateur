@@ -22,6 +22,7 @@
     DRHSecateurDisplayViewController *displayViewController;
     DRHSecateurEditingViewController *editingViewController;
 }
+-(DRHSecateurTree *)selectedTree;
 
 -(IBAction)addTree:(id)sender;
 -(IBAction)removeSelectedTrees:(id)sender;
