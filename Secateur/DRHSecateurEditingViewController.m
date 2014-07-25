@@ -9,6 +9,7 @@
 #import "DRHSecateurEditingViewController.h"
 #import "DRHSecateurDocument.h"
 #import "DRHSecateurTree.h"
+#import "DRHPottingHistoryItem.h"
 
 @interface DRHSecateurEditingViewController ()
 
@@ -52,11 +53,29 @@
 }
 
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
-    return @"-";
+    DRHPottingHistoryItem *currentItem = [[[[self.view.window.windowController document] selectedTree] pottingHistoryArray] objectAtIndex:row];
+    if ([[tableColumn.headerCell stringValue] isEqualToString:@"Date"])
+        return currentItem.date;
+    else if ([[tableColumn.headerCell stringValue] isEqualToString:@"Pot"])
+        return currentItem.pot;
+    else if ([[tableColumn.headerCell stringValue] isEqualToString:@"Soil"])
+        return currentItem.soil;
+    else if ([[tableColumn.headerCell stringValue] isEqualToString:@"Fertiliser"])
+        return currentItem.fertiliser;
+    return nil;
 }
 
 -(void)tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
-    
+    DRHPottingHistoryItem *currentItem = [[[[self.view.window.windowController document] selectedTree] pottingHistoryArray] objectAtIndex:row];
+    if ([[tableColumn.headerCell stringValue] isEqualToString:@"Date"])
+        currentItem.date = object;
+    else if ([[tableColumn.headerCell stringValue] isEqualToString:@"Pot"])
+        currentItem.pot = object;
+    else if ([[tableColumn.headerCell stringValue] isEqualToString:@"Soil"])
+        currentItem.soil = object;
+    else if ([[tableColumn.headerCell stringValue] isEqualToString:@"Fertiliser"])
+        currentItem.fertiliser = object;
+    [[self.view.window.windowController document] updateChangeCount:NSChangeDone];
 }
 
 
@@ -71,10 +90,11 @@
     [startDatePicker bind:@"value" toObject:tree withKeyPath:@"startDate" options:nil];
     [potUpDatePicker unbind:@"value"];
     [potUpDatePicker bind:@"value" toObject:tree withKeyPath:@"potUpDate" options:nil];
+    [pottingHistoryTable reloadData];
 }
 
 -(IBAction)addPottingHistory:(id)sender{
-    [[[[self.view.window.windowController document] selectedTree] pottingHistoryArray] addObject:@"-"];
+    [[[[self.view.window.windowController document] selectedTree] pottingHistoryArray] addObject:[DRHPottingHistoryItem pottingHistoryItem]];
     [pottingHistoryTable reloadData];
 }
 
