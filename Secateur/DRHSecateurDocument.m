@@ -120,6 +120,7 @@
 
 -(IBAction)addTree:(id)sender{
     [dataArray addObject:[DRHSecateurTree tree]];
+    [self updateChangeCount:NSChangeDone];
     [treeTable reloadData];
 }
 
@@ -129,6 +130,7 @@
         NSLog(@"%ld",returnCode);
         if (returnCode == 0) {
             [dataArray removeObjectsAtIndexes:[treeTable selectedRowIndexes]];
+            [self updateChangeCount:NSChangeDone];
             [treeTable reloadData];
         }
     }];

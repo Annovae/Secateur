@@ -10,7 +10,7 @@
 
 @class DRHSecateurTree;
 
-@interface DRHSecateurEditingViewController : NSViewController <NSTableViewDataSource>{
+@interface DRHSecateurEditingViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>{
     IBOutlet NSTextField *nameField;
     IBOutlet NSTextField *speciesField;
     IBOutlet NSTextField *sourceField;
@@ -27,5 +27,7 @@
 -(void)bindToTree:(DRHSecateurTree *)tree;
 -(IBAction)addPottingHistory:(id)sender;
 -(IBAction)removePottingHistory:(id)sender;
+-(void)clearPottingHistoryDatePicker;
+-(IBAction)selectNewDate:(id)sender;
 
 @end
