@@ -11,6 +11,7 @@
 		E553980C197F676A00E4A10B /* toDo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E553980B197F676A00E4A10B /* toDo.rtf */; };
 		E553980F197F681800E4A10B /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = E553980D197F681800E4A10B /* LICENSE.md */; };
 		E5539810197F681800E4A10B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E553980E197F681800E4A10B /* README.md */; };
+		E579C5C9198B3F7F00F692C4 /* DRHGalleryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E579C5C8198B3F7F00F692C4 /* DRHGalleryItem.m */; };
 		E5939B521977709000E4082E /* DRHSecateurEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5939B501977709000E4082E /* DRHSecateurEditingViewController.m */; };
 		E5939B531977709000E4082E /* DRHSecateurEditingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5939B511977709000E4082E /* DRHSecateurEditingView.xib */; };
 		E5939B57197775AE00E4082E /* DRHSecateurDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5939B55197775AE00E4082E /* DRHSecateurDisplayViewController.m */; };
@@ -46,6 +47,8 @@
 		E553980B197F676A00E4A10B /* toDo.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = toDo.rtf; path = Secateur/toDo.rtf; sourceTree = "<group>"; };
 		E553980D197F681800E4A10B /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		E553980E197F681800E4A10B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E579C5C7198B3F7F00F692C4 /* DRHGalleryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRHGalleryItem.h; sourceTree = "<group>"; };
+		E579C5C8198B3F7F00F692C4 /* DRHGalleryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRHGalleryItem.m; sourceTree = "<group>"; };
 		E5939B4F1977709000E4082E /* DRHSecateurEditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRHSecateurEditingViewController.h; sourceTree = "<group>"; };
 		E5939B501977709000E4082E /* DRHSecateurEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRHSecateurEditingViewController.m; sourceTree = "<group>"; };
 		E5939B511977709000E4082E /* DRHSecateurEditingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DRHSecateurEditingView.xib; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 			children = (
 				E54853021982082A00868C2A /* DRHPottingHistoryItem.h */,
 				E54853031982082A00868C2A /* DRHPottingHistoryItem.m */,
+				E579C5C7198B3F7F00F692C4 /* DRHGalleryItem.h */,
+				E579C5C8198B3F7F00F692C4 /* DRHGalleryItem.m */,
 				E5C7B6A71974CF52009EB09B /* DRHSecateurTree.h */,
 				E5C7B6A81974CF52009EB09B /* DRHSecateurTree.m */,
 				E5BD7FE71973899F00A45D30 /* DRHSecateurDocument.h */,
@@ -298,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E54853041982082A00868C2A /* DRHPottingHistoryItem.m in Sources */,
+				E579C5C9198B3F7F00F692C4 /* DRHGalleryItem.m in Sources */,
 				E5939B57197775AE00E4082E /* DRHSecateurDisplayViewController.m in Sources */,
 				E5C7B6A91974CF52009EB09B /* DRHSecateurTree.m in Sources */,
 				E5BD7FE21973899F00A45D30 /* main.m in Sources */,

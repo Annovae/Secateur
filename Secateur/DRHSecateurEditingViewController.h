@@ -17,6 +17,8 @@
     IBOutlet NSDatePicker *startDatePicker;
     IBOutlet NSDatePicker *potUpDatePicker;
     IBOutlet NSTableView *pottingHistoryTable;
+    IBOutlet NSTableView *galleryTable;
+    IBOutlet NSImageView *galleryImageView;
 }
 -(NSTextField *)nameField;
 -(NSTextField *)speciesField;
@@ -27,7 +29,8 @@
 -(void)bindToTree:(DRHSecateurTree *)tree;
 -(IBAction)addPottingHistory:(id)sender;
 -(IBAction)removePottingHistory:(id)sender;
--(void)clearPottingHistoryDatePicker;
--(IBAction)selectNewDate:(id)sender;
+-(IBAction)addGalleryItem:(id)sender;
+-(IBAction)removeGalleryItem:(id)sender;
+-(IBAction)newGalleryImage:(id)sender;
 
 @end

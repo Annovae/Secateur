@@ -81,6 +81,16 @@
     return YES;
 }
 
+-(void)canCloseDocumentWithDelegate:(id)delegate shouldCloseSelector:(SEL)shouldCloseSelector contextInfo:(void *)contextInfo{
+    [selectedTree removeObserver:self forKeyPath:@"treeName"];
+    [selectedTree removeObserver:self forKeyPath:@"species"];
+    [selectedTree removeObserver:self forKeyPath:@"source"];
+    [selectedTree removeObserver:self forKeyPath:@"startDate"];
+    [selectedTree removeObserver:self forKeyPath:@"potUpDate"];
+    
+    [super canCloseDocumentWithDelegate:delegate shouldCloseSelector:shouldCloseSelector contextInfo:contextInfo];
+}
+
 #pragma mark NSTableView datasource methods
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView{
     return [dataArray count];
@@ -127,7 +137,7 @@
 -(IBAction)removeSelectedTrees:(id)sender{
     NSAlert *confirmRemoveTreesAlert = [NSAlert alertWithMessageText:@"Are you sure you want to remove these trees?" defaultButton:@"Wait!" alternateButton:@"Yes, delete them." otherButton:nil informativeTextWithFormat:@"If you delete these tree records they are gone, you can't get them back."];
     [confirmRemoveTreesAlert beginSheetModalForWindow:[sender window] completionHandler:^(NSModalResponse returnCode){
-        NSLog(@"%ld",returnCode);
+//        NSLog(@"%ld",returnCode);
         if (returnCode == 0) {
             [dataArray removeObjectsAtIndexes:[treeTable selectedRowIndexes]];
             [self updateChangeCount:NSChangeDone];
