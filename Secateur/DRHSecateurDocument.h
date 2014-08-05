@@ -22,6 +22,8 @@
     DRHSecateurDisplayViewController *displayViewController;
     DRHSecateurEditingViewController *editingViewController;
 }
+@property (readonly) BOOL isEditing;
+
 -(DRHSecateurTree *)selectedTree;
 
 -(IBAction)addTree:(id)sender;

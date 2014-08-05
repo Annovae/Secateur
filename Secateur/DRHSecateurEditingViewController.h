@@ -32,5 +32,6 @@
 -(IBAction)addGalleryItem:(id)sender;
 -(IBAction)removeGalleryItem:(id)sender;
 -(IBAction)newGalleryImage:(id)sender;
+-(IBAction)updateDisplayImage:(id)sender;
 
 @end

@@ -22,6 +22,7 @@
 @property NSString *source;
 @property NSDate *startDate;
 @property NSDate *potUpDate;
+@property NSImage *displayImage;
 
 +(DRHSecateurTree *)tree;
 

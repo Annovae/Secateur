@@ -10,6 +10,7 @@
 #import "DRHSecateurTree.h"
 #import "DRHSecateurDisplayViewController.h"
 #import "DRHSecateurEditingViewController.h"
+#import "DRHSecateurDisplayView.h"
 
 @implementation DRHSecateurDocument
 
@@ -23,6 +24,8 @@
         
         displayViewController = nil;
         editingViewController = nil;
+        
+        _isEditing = NO;
     }
     return self;
 }
@@ -147,21 +150,27 @@
 }
 
 -(void)selectTree:(DRHSecateurTree *)tree{
-    [selectedTree removeObserver:self forKeyPath:@"treeName"];
-    [selectedTree removeObserver:self forKeyPath:@"species"];
-    [selectedTree removeObserver:self forKeyPath:@"source"];
-    [selectedTree removeObserver:self forKeyPath:@"startDate"];
-    [selectedTree removeObserver:self forKeyPath:@"potUpDate"];
-    selectedTree = tree;
-    [tree addObserver:self forKeyPath:@"treeName" options:0 context:nil];
-    [tree addObserver:self forKeyPath:@"species" options:0 context:nil];
-    [tree addObserver:self forKeyPath:@"source" options:0 context:nil];
-    [tree addObserver:self forKeyPath:@"startDate" options:0 context:nil];
-    [tree addObserver:self forKeyPath:@"potUpDate" options:0 context:nil];
-    [editingViewController bindToTree:tree];
+    if (_isEditing) {
+        [selectedTree removeObserver:self forKeyPath:@"treeName"];
+        [selectedTree removeObserver:self forKeyPath:@"species"];
+        [selectedTree removeObserver:self forKeyPath:@"source"];
+        [selectedTree removeObserver:self forKeyPath:@"startDate"];
+        [selectedTree removeObserver:self forKeyPath:@"potUpDate"];
+        selectedTree = tree;
+        [tree addObserver:self forKeyPath:@"treeName" options:0 context:nil];
+        [tree addObserver:self forKeyPath:@"species" options:0 context:nil];
+        [tree addObserver:self forKeyPath:@"source" options:0 context:nil];
+        [tree addObserver:self forKeyPath:@"startDate" options:0 context:nil];
+        [tree addObserver:self forKeyPath:@"potUpDate" options:0 context:nil];
+        [editingViewController bindToTree:tree];
+    } else {
+        [(DRHSecateurDisplayView *)displayViewController.view setCurrentTree:tree];
+        [displayViewController.view setNeedsDisplay:YES];
+    }
 }
 
 -(IBAction)edit:(id)sender{
+    _isEditing = YES;
     [self showEditingView];
     [sender setTitle:@"End editing"];
     [sender setAction:@selector(endEditing:)];
@@ -182,6 +191,7 @@
 }
 
 -(IBAction)endEditing:(id)sender{
+    _isEditing = NO;
     [self showDisplayView];
     [sender setTitle:@"Edit"];
     [sender setAction:@selector(edit:)];
@@ -195,6 +205,10 @@
     displayViewController.view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     [editingViewController.view removeFromSuperview];
     [contentView addSubview:displayViewController.view];
+    NSIndexSet *selectedTreeIndexes = [treeTable selectedRowIndexes];
+    if ([selectedTreeIndexes count] > 0) {
+        [self selectTree:[dataArray objectAtIndex:[selectedTreeIndexes firstIndex]]];
+    }
 }
 
 @end

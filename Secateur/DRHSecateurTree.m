@@ -21,6 +21,7 @@
         potUpDate = [NSDate date];
         pottingHistoryArray = [NSMutableArray array];
         galleryArray = [NSMutableArray array];
+        _displayImage = nil;
     }
     return self;
 }
@@ -69,6 +70,10 @@
         if (!galleryArray) {
             galleryArray = [NSMutableArray array];
         }
+        _displayImage = [aDecoder decodeObjectForKey:@"displayImage"];
+        if (!_displayImage) {
+            _displayImage = nil;
+        }
     }
     return self;
 }
@@ -81,6 +86,7 @@
     [aCoder encodeObject:potUpDate forKey:@"potUpDate"];
     [aCoder encodeObject:pottingHistoryArray forKey:@"pottingHistoryArray"];
     [aCoder encodeObject:galleryArray forKey:@"galleryArray"];
+    [aCoder encodeObject:_displayImage forKey:@"displayImage"];
 }
 
 @end

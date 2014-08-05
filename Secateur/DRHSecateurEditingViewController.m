@@ -248,4 +248,8 @@
     }
 }
 
+-(IBAction)updateDisplayImage:(id)sender{
+    [[[self.view.window.windowController document] selectedTree] setDisplayImage:[galleryImageView image]];
+}
+
 @end

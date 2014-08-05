@@ -16,6 +16,8 @@
 		E5939B531977709000E4082E /* DRHSecateurEditingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5939B511977709000E4082E /* DRHSecateurEditingView.xib */; };
 		E5939B57197775AE00E4082E /* DRHSecateurDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5939B55197775AE00E4082E /* DRHSecateurDisplayViewController.m */; };
 		E5939B58197775AE00E4082E /* DRHSecateurDisplayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5939B56197775AE00E4082E /* DRHSecateurDisplayView.xib */; };
+		E5B6B8F419907CAD00D46FBA /* DRHSecateurDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B6B8F319907CAD00D46FBA /* DRHSecateurDisplayView.m */; };
+		E5B6B8F71990881700D46FBA /* DRHSecateurDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B6B8F61990881700D46FBA /* DRHSecateurDelegate.m */; };
 		E5BD7FD61973899F00A45D30 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BD7FD51973899F00A45D30 /* Cocoa.framework */; };
 		E5BD7FE01973899F00A45D30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E5BD7FDE1973899F00A45D30 /* InfoPlist.strings */; };
 		E5BD7FE21973899F00A45D30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BD7FE11973899F00A45D30 /* main.m */; };
@@ -55,6 +57,10 @@
 		E5939B54197775AE00E4082E /* DRHSecateurDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRHSecateurDisplayViewController.h; sourceTree = "<group>"; };
 		E5939B55197775AE00E4082E /* DRHSecateurDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRHSecateurDisplayViewController.m; sourceTree = "<group>"; };
 		E5939B56197775AE00E4082E /* DRHSecateurDisplayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DRHSecateurDisplayView.xib; sourceTree = "<group>"; };
+		E5B6B8F219907CAD00D46FBA /* DRHSecateurDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRHSecateurDisplayView.h; sourceTree = "<group>"; };
+		E5B6B8F319907CAD00D46FBA /* DRHSecateurDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRHSecateurDisplayView.m; sourceTree = "<group>"; };
+		E5B6B8F51990881700D46FBA /* DRHSecateurDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRHSecateurDelegate.h; sourceTree = "<group>"; };
+		E5B6B8F61990881700D46FBA /* DRHSecateurDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRHSecateurDelegate.m; sourceTree = "<group>"; };
 		E5BD7FD21973899F00A45D30 /* Secateur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Secateur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5BD7FD51973899F00A45D30 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E5BD7FD81973899F00A45D30 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -157,7 +163,11 @@
 				E5939B511977709000E4082E /* DRHSecateurEditingView.xib */,
 				E5939B54197775AE00E4082E /* DRHSecateurDisplayViewController.h */,
 				E5939B55197775AE00E4082E /* DRHSecateurDisplayViewController.m */,
+				E5B6B8F219907CAD00D46FBA /* DRHSecateurDisplayView.h */,
+				E5B6B8F319907CAD00D46FBA /* DRHSecateurDisplayView.m */,
 				E5939B56197775AE00E4082E /* DRHSecateurDisplayView.xib */,
+				E5B6B8F51990881700D46FBA /* DRHSecateurDelegate.h */,
+				E5B6B8F61990881700D46FBA /* DRHSecateurDelegate.m */,
 				E5BD7FED1973899F00A45D30 /* MainMenu.xib */,
 				E5BD7FF01973899F00A45D30 /* Images.xcassets */,
 				E5BD7FDC1973899F00A45D30 /* Supporting Files */,
@@ -306,8 +316,10 @@
 				E579C5C9198B3F7F00F692C4 /* DRHGalleryItem.m in Sources */,
 				E5939B57197775AE00E4082E /* DRHSecateurDisplayViewController.m in Sources */,
 				E5C7B6A91974CF52009EB09B /* DRHSecateurTree.m in Sources */,
+				E5B6B8F71990881700D46FBA /* DRHSecateurDelegate.m in Sources */,
 				E5BD7FE21973899F00A45D30 /* main.m in Sources */,
 				E5939B521977709000E4082E /* DRHSecateurEditingViewController.m in Sources */,
+				E5B6B8F419907CAD00D46FBA /* DRHSecateurDisplayView.m in Sources */,
 				E5BD7FE91973899F00A45D30 /* DRHSecateurDocument.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
