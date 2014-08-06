@@ -250,6 +250,7 @@
 
 -(IBAction)updateDisplayImage:(id)sender{
     [[[self.view.window.windowController document] selectedTree] setDisplayImage:[galleryImageView image]];
+    [[self.view.window.windowController document] updateChangeCount:NSChangeDone];
 }
 
 @end
