@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface DRHSecateurDisplayViewController : NSViewController
+@interface DRHSecateurDisplayViewController : NSViewController <NSTableViewDataSource> {
+    IBOutlet NSTableView *pottingHistoryView;
+}
 
 @end

@@ -10,7 +10,7 @@
 
 @class DRHSecateurTree;
 
-@interface DRHSecateurDisplayView : NSView
+@interface DRHSecateurDisplayView : NSView <NSTableViewDataSource>
 
 @property DRHSecateurTree *currentTree;
 

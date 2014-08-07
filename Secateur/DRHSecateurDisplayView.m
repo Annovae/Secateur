@@ -9,6 +9,12 @@
 #import "DRHSecateurDisplayView.h"
 #import "DRHSecateurTree.h"
 #import "DRHSecateurDocument.h"
+#import "DRHPottingHistoryItem.h"
+
+@interface DRHSecateurDisplayView() {
+    IBOutlet NSTableView *pottingHistoryView;
+}
+@end
 
 @implementation DRHSecateurDisplayView
 
@@ -18,6 +24,23 @@
     if (self) {
         // Initialization code here.
         _currentTree = nil;
+/*        pottingHistoryView = [[NSTableView alloc] initWithFrame:NSMakeRect(0.0, 0.0, 0.0, 0.0)];
+        [pottingHistoryView setDataSource:self];
+//        [pottingHistoryView setColumnAutoresizingStyle:NSTableViewUniformColumnAutoresizingStyle];
+        NSTableColumn *newColumn = [[NSTableColumn alloc] initWithIdentifier:@"Date"];
+        [newColumn setResizingMask:NSTableColumnUserResizingMask];
+        [newColumn setWidth:95.0];
+        [pottingHistoryView addTableColumn:newColumn];
+        newColumn = [[NSTableColumn alloc] initWithIdentifier:@"Pot"];
+        [newColumn setResizingMask:NSTableColumnAutoresizingMask];
+        [pottingHistoryView addTableColumn:newColumn];
+        newColumn = [[NSTableColumn alloc] initWithIdentifier:@"Soil"];
+        [newColumn setResizingMask:NSTableColumnAutoresizingMask];
+        [pottingHistoryView addTableColumn:newColumn];
+        newColumn = [[NSTableColumn alloc] initWithIdentifier:@"Fertiliser"];
+        [newColumn setResizingMask:NSTableColumnAutoresizingMask];
+        [pottingHistoryView addTableColumn:newColumn];
+        [self addSubview:pottingHistoryView];*/
     }
     return self;
 }
@@ -27,6 +50,12 @@
     [super drawRect:dirtyRect];
     
     // Drawing code here.
+    [[NSColor whiteColor] setFill];
+    [[NSColor grayColor] setStroke];
+    NSBezierPath *bgPath = [NSBezierPath bezierPathWithRect:_frame];
+//    [bgPath fill];
+    [bgPath stroke];
+    
     CGFloat padding = 20.0;
     NSDictionary *textAttr = [NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Arial" size:22] forKey:NSFontAttributeName];
     NSRect textRect;
@@ -41,10 +70,11 @@
     [[[_currentTree species] lowercaseString] drawInRect:textRect withAttributes:textAttr];
     
     NSRect mainSpaceRect = _frame;
-    mainSpaceRect.size.height = textRect.origin.y - 2.0*padding;
+    mainSpaceRect.size.height -= 4.0;
     mainSpaceRect.size.width -= 2.0*padding;
-    mainSpaceRect.origin.x += padding;
-    mainSpaceRect.origin.y += padding;
+    mainSpaceRect.origin.x = padding;
+    mainSpaceRect.origin.y = padding;
+    mainSpaceRect.size.height = textRect.origin.y - padding;
     NSRect currentDrawSpace;
     currentDrawSpace.size = _currentTree.displayImage.size;
     currentDrawSpace.origin.x = currentDrawSpace.size.width / currentDrawSpace.size.height;
@@ -89,6 +119,9 @@
     textString = _currentTree.source;
     dataTextRect.size = [textString sizeWithAttributes:textAttr];
     [textString drawInRect:dataTextRect withAttributes:textAttr];
+    
+    currentDrawSpace.origin.y -= currentDrawSpace.size.height + padding;
+    currentDrawSpace.size.width = mainSpaceRect.size.width;
 }
 
 @end
